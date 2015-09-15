@@ -43,12 +43,14 @@
     
     _userName=[[UITextField alloc]initWithFrame:CGRectMake(150,225,150,30)];
     _userName.borderStyle=UITextBorderStyleRoundedRect;
+    _userName.text=@"yangmengjia";
     [self.view addSubview:_userName];
     
     _passWord=[[UITextField alloc]initWithFrame:CGRectMake(150, 275, 150, 30)];
     
     _passWord.borderStyle=UITextBorderStyleRoundedRect;
     _passWord.secureTextEntry=YES;
+    _passWord.text=@"63566309";
     [self.view addSubview:_passWord];
     
     _LogInBtn=[[UIButton alloc]initWithFrame:CGRectMake(70, 340, 250, 40)];
