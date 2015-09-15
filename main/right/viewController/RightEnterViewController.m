@@ -93,40 +93,46 @@
 - (void)LoginAction
 {
     
-    
-    [AVGeoPoint geoPointForCurrentLocationInBackground:^(AVGeoPoint *geoPoint, NSError *error) {
+   
         
+            [AVUser logInWithUsernameInBackground:_userName.text password:_passWord.text block:^(AVUser *user, NSError *error)
+             {
+                 if (user != nil)
+                 {
+                     NSLog(@"登入成功");
+                     
+                     NSLog(@"用户为 %@",user.username);
+                     
+                     
+                     
+                     [AVGeoPoint geoPointForCurrentLocationInBackground:^(AVGeoPoint *geoPoint, NSError *error) {
+                     
+                         //模拟器的话 定位失败也没事，这行不会运行
+                     [user setObject:geoPoint forKey:@"location"];
+                         
+                         
+                     }];
+                     
+                     [user save];
 
-    
-    [AVUser logInWithUsernameInBackground:_userName.text password:_passWord.text block:^(AVUser *user, NSError *error)
-     {
-         if (user != nil)
-         {
-             NSLog(@"登入成功");
-             
-             NSLog(@"用户为 %@",user.username);
-             
-             [user setObject:geoPoint forKey:@"location"];
-             [user save];
-
-             
-             [self dismissViewControllerAnimated:YES completion:nil];
-             
-             
-             //调用block,返回去调用 isEnter
-             _block();
-             
-             
-             
-         } else {
-             NSLog(@"登入失败");
-             
-         }
-     }];
-    
+                     
+                     [self dismissViewControllerAnimated:YES completion:nil];
+                     
+                     
+                     //调用block,返回去调用 isEnter
+                     _block();
+                     
+                     
+                     
+                 } else {
+                     NSLog(@"登入失败");
+                     
+                 }
         
-        
-    }];
+                
+       
+                
+        }];
 
     
 }
