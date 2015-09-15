@@ -107,12 +107,14 @@
                      
                      [AVGeoPoint geoPointForCurrentLocationInBackground:^(AVGeoPoint *geoPoint, NSError *error) {
                      
-                         //模拟器的话 定位失败也没事，这行不会运行
-                     [user setObject:geoPoint forKey:@"location"];
-                         
+                         //模拟器的话 定位失败也没事，这2行不会运行
+                         [user setObject:geoPoint forKey:@"location"];
+                         [user save];
                          
                      }];
                      
+                     
+                     //保障不管定位成不成功 都save
                      [user save];
 
                      
