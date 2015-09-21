@@ -17,9 +17,8 @@ typedef void(^AlertBlock) (NSString *string1,UIImage *image,NSString *geo);
 
 @interface SendCommentViewController : BaseViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
-    //1 文本编辑栏
-    UITextView *_textView;
     
+
     
     //2 工具栏
     UIView *_editorBar;
@@ -36,6 +35,7 @@ typedef void(^AlertBlock) (NSString *string1,UIImage *image,NSString *geo);
 
 }
 
+//1 文本编辑栏
 @property(nonatomic) UITextView *textView;
 
 @property(nonatomic,copy)  AlertBlock block110;

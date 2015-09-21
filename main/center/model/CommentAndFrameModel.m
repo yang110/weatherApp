@@ -46,10 +46,7 @@
 
     
     
-    //   1) 根据comment  计算frame ;
-    
-    
-//    NSLog(@"%@",comment);
+    // 01 根据comment  计算frame ;
     
     NSDictionary *dic = @{NSFontAttributeName:[UIFont systemFontOfSize:17]};
     CGSize contenSize = [comment boundingRectWithSize:CGSizeMake(300, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
@@ -71,7 +68,7 @@
         _cellFrame=CGRectMake(0, 0, 375, contenSize.height+49+25);
     }
     
-//    2）
+
     
     //02处理图片  把[兔子] 转化成<image url = '%@'>
     NSString *regex=@"\\[\\w+\\]";

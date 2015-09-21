@@ -71,10 +71,7 @@
         [alter show];
         
     }
-    
-    
-    
-    
+
 }
 
 //关闭相册后  1）保存image  2）创建comment文件  3）获取url 4）model添加url和commentId  5）url添加到json并保存
@@ -269,10 +266,10 @@
     self.title=@"实景";
     
     
-    [self getGeoPoint];
+    [self getGeoPoint];//定位
   
     
-    [self createBarButtonItem];
+    [self createBarButtonItem];//按钮
 
     [self createImagePicker];
  
@@ -282,15 +279,12 @@
     [self createHeaderView];
     
     
-    //从网上下载数据 到arraymodel,每次开机都需要，保证时网络版
+    //从网上下载数据 到arraymodel,每次开机都需要，保证网络版
     [self loadData];
     
     //下啦刷新
     _collectionView .header=[MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
-    
 
-    
-    
 }
 
 #pragma mark 登入时 下载json数据 到_arrayModel

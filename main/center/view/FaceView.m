@@ -23,6 +23,7 @@
 
 
 @implementation FaceView
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -37,7 +38,8 @@
 }
 
 
-- (void)_initData{
+- (void)_initData
+{
  
     
     _items = [[NSMutableArray alloc] init];

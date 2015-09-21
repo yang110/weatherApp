@@ -24,6 +24,8 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
+//一先
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -35,6 +37,7 @@
     
 }
 
+//三 后
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title=@"评论";
@@ -44,12 +47,13 @@
     [_textView becomeFirstResponder];
 }
 
+//二 再
 -(instancetype)init
 {
     self=[super init];
     if (self) {
         
-        self.edgesForExtendedLayout=UIRectEdgeNone;
+        self.edgesForExtendedLayout=UIRectEdgeNone;//不延伸
         
         [self _createNavItems];
         [self _createEditorViews];
@@ -59,6 +63,7 @@
     
 }
 
+//导航按钮
 - (void)_createNavItems
 {
     
@@ -81,6 +86,7 @@
     
 }
 
+//初始化
 - (void)_createEditorViews
 {
    
@@ -101,6 +107,8 @@
     _editorBar = [[UIView alloc] initWithFrame:CGRectMake(0, kScreenHeight, kScreenWidth, 55)];
     _editorBar.backgroundColor = [UIColor redColor];
     [self.view addSubview:_editorBar];
+    
+    
     //3.创建多个编辑按钮
     NSArray *imgs = @[
                       @"compose_toolbar_1.png",
@@ -123,7 +131,6 @@
     }
     
     //    4创建地理位置
-    
     geoLable=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 44)];
     geoLable.text=@"该用户未定位";
     geoLable.hidden=YES;
@@ -148,8 +155,6 @@
     else  if (button.tag==11)
     {
         //加个#
-        
-// 有空在添加新东西
         NSMutableString *mString=[[NSMutableString alloc]initWithString:_textView.text];
         _textView.text= [mString stringByAppendingString:@"#"];
     }
@@ -158,13 +163,16 @@
 
         
         
-//这里可能有问题 循环引用得考虑下
+
         AtUserTableViewController *vc=[[AtUserTableViewController alloc]init];
+        
+        
+        __block SendCommentViewController *blockSelf=self;
         
         
         vc.block112=^(NSString *name){
           NSMutableString *mString=[[NSMutableString alloc]initWithString:_textView.text];
-            _textView.text= [mString stringByAppendingFormat:@"@%@ ",name];
+          blockSelf.textView.text= [mString stringByAppendingFormat:@"@%@ ",name];
     
         };
         
@@ -354,8 +362,6 @@
 - (void)keyBoardWillShow:(NSNotification *)notification
 {
     
-    //    NSLog(@"%@",notification);
-    
     
     //1 取出键盘frame
     NSValue *bounsValue = [notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
@@ -366,6 +372,16 @@
     //3 调整视图的高度
   
     _editorBar.bottom =frame.origin.y-64;
+
+    
+    //4 调整地理位置label高度
+    geoLable.bottom=_editorBar.top;
+    
+    
+    //5隐藏
+    [self _hideFaceView];
+    
+    
     
 }
 
@@ -458,7 +474,7 @@
 //显示表情
 - (void)_showFaceView
 {
-    
+
     //创建表情面板
     if (_faceViewPanel == nil) {
         
@@ -467,6 +483,8 @@
         
         //注意 隔着 2层
         [_faceViewPanel setFaceViewDelegate:self];
+        
+        
         //放到底部
         _faceViewPanel.top  = kScreenHeight-64;
         [self.view addSubview:_faceViewPanel];
@@ -480,6 +498,9 @@
         //重新布局工具栏、输入框
         _editorBar.bottom = _faceViewPanel.top;
         
+        geoLable.bottom=_editorBar.top;
+        
+        
     }];
 }
 
@@ -489,7 +510,11 @@
     
     //隐藏表情
     [UIView animateWithDuration:0.3 animations:^{
-        _faceViewPanel.top = kScreenHeight-64;
+        _faceViewPanel.top = kScreenHeight;
+        
+        geoLable.bottom=_editorBar.top;
+        
+        
         
     }];
     

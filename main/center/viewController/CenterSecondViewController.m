@@ -345,13 +345,8 @@
     
     vc.block110=^(NSString *string1,UIImage *image,NSString *geo)
     {
-      
-        
         [vcc commentAction:string1 and:image andGeo:geo];
-        
-        
-        
-    } ;
+    };
     
     [self presentViewController:vc1 animated:YES completion:nil];
     
@@ -406,7 +401,7 @@
                  commentModel.geo=dic[@"geo"];//必须在comment前面
          
                  commentModel.userName=dic[@"userName"];
-                 commentModel.comment=dic[@"comment"];    //计算frame 高度
+                 commentModel.comment=dic[@"comment"];    //在这里面 计算frame 高度
                  commentModel.userImageUrl=dic[@"userImageUrl"];
                  commentModel.date=dic[@"date"];
                  
@@ -614,7 +609,7 @@
         
         [vcc commentAction:string1 and:image andGeo:geo];
         
-    } ;
+    };
     
     
     CommentAndFrameModel   *model=arrayComment[indexPath.row];

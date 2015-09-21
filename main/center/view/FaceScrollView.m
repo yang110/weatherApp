@@ -33,6 +33,8 @@
     _faceView.delegate = delegate;
     
 }
+
+
 - (void)_createViews{
     //faceView创建完毕以后，宽高已经重新计算
     _faceView = [[FaceView alloc] initWithFrame:CGRectZero];
