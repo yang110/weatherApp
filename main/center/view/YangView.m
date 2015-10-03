@@ -51,6 +51,7 @@
         for (int i=0; i<4; i++)
         {
             FirstModel *model=_array[i];
+            
             [arrayImageView[i] sd_setImageWithURL:[NSURL URLWithString:model.imageStr]];
         }
     }

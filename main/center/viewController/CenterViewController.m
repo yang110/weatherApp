@@ -355,9 +355,7 @@
     CenterSecondViewController *vc2=[[CenterSecondViewController alloc]init];
     vc2.model=_arrayModel[indexPath.row];
     [self.navigationController pushViewController:vc2 animated:YES];
-    
-    
-    
+
 }
 
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section

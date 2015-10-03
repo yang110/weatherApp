@@ -311,12 +311,7 @@
     NSString *path=[[NSBundle mainBundle] pathForResource:string ofType:nil];
     NSData *data=[NSData dataWithContentsOfFile:path];
     id arrayOrDic=[NSJSONSerialization JSONObjectWithData:data options: NSJSONReadingMutableContainers error:nil];
-    
-    
-    
-    
-    
-    
+
     return arrayOrDic;
 }
 
