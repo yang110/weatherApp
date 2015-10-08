@@ -7,7 +7,7 @@
 //
 
 #import "FirstCollectionViewCell.h"
-
+#import "UIImageView+WebCache.h"
 @implementation FirstCollectionViewCell
 
 - (void)awakeFromNib {
@@ -35,7 +35,24 @@
     //缩略图
     AVFile *file = [AVFile fileWithURL:_model.imageStr];
     [file getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
-        _imageView.image=image;
+        
+      
+        
+        if (error==nil) {
+            _imageView.image=image;
+            
+            
+        }
+        else
+        {
+            
+            [_imageView sd_setImageWithURL:[NSURL URLWithString:_model.imageStr]];
+            
+            
+        }
+        
+        
+        
         
     }];
     
