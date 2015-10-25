@@ -18,42 +18,31 @@
 {
     _model=model;
     [self setNeedsLayout];
-    
-    
 }
 
 
 -(void)layoutSubviews
 {
-    
-    
-    
     _location.text=_model.location110;
-    
-    
-    
+
     //缩略图
     AVFile *file = [AVFile fileWithURL:_model.imageStr];
-    [file getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error) {
+    [file getThumbnail:YES width:100 height:100 withBlock:^(UIImage *image, NSError *error)
+     {
+    
+        if (error==nil)
+        {
         
-      
-        
-        if (error==nil) {
             _imageView.image=image;
-            
-            
+        
         }
         else
         {
             
             [_imageView sd_setImageWithURL:[NSURL URLWithString:_model.imageStr]];
-            
-            
+        
+        
         }
-        
-        
-        
-        
     }];
     
     

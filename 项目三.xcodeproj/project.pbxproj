@@ -957,7 +957,7 @@
 		0485A8011B8CAA9C00B7243D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0485A8091B8CAA9C00B7243D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0485A80C1B8CAA9C00B7243D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		0485A8121B8CAA9C00B7243D /* 项目三Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "项目三Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0485A8121B8CAA9C00B7243D /* 项目三.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "项目三.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0485A8171B8CAA9D00B7243D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0485A8181B8CAA9D00B7243D /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
 		048C0A0A1B97E1130035537E /* camera_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_press.png; sourceTree = "<group>"; };
@@ -1797,7 +1797,7 @@
 			isa = PBXGroup;
 			children = (
 				0485A7F91B8CAA9C00B7243D /* 项目三.app */,
-				0485A8121B8CAA9C00B7243D /* 项目三Tests.xctest */,
+				0485A8121B8CAA9C00B7243D /* 项目三.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2003,7 +2003,7 @@
 			);
 			name = "项目三Tests";
 			productName = "项目三Tests";
-			productReference = 0485A8121B8CAA9C00B7243D /* 项目三Tests.xctest */;
+			productReference = 0485A8121B8CAA9C00B7243D /* 项目三.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -2677,13 +2677,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "项目三/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/common/WXLabel",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "--.HWWeather";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "项目三";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -2697,13 +2698,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "项目三/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/common/WXLabel",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "--.HWWeather";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "项目三";
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
@@ -2723,7 +2725,7 @@
 				INFOPLIST_FILE = "项目三Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "--.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "项目三";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/项目三.app/项目三";
 			};
 			name = Debug;
@@ -2739,7 +2741,7 @@
 				INFOPLIST_FILE = "项目三Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "--.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "项目三";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/项目三.app/项目三";
 			};
 			name = Release;

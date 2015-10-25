@@ -11,7 +11,7 @@
 
 
 
-#define IdValue  @"f377a56d06ca0e620bcf1088bd2a5361"
+#define IdValue  @"9b189d3c855ba50e16447520371a8d61"
 #define IdKenKey  @"key"
 
 #define  BaseUrl @"http://v.juhe.cn/weather/"
